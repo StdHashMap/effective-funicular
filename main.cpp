@@ -5,7 +5,7 @@
 template<class KeyType, class ValueType, class Hash = std::hash<KeyType>>
 class HashMap {
 public:
-	using value_type = std::pair<const KeyType, ValueType>;
+	using _value_type = std::pair<const KeyType, ValueType>;
 
 	/*
 		Stores elements with equal hash
@@ -31,6 +31,7 @@ public:
 	*/
 	class iterator {
 	public:
+		using value_type = _value_type;
 		using difference_type = size_t;
 		using iterator_category = typename std::forward_iterator_tag;
 		using pointer = void;
@@ -91,6 +92,7 @@ public:
 	*/
 	class const_iterator {
 	public:
+		using value_type = _value_type;
 		using difference_type = size_t;
 		using iterator_category = typename std::forward_iterator_tag;
 		using pointer = void;
